@@ -28,8 +28,15 @@ public class Utils {
 
 			// Request spec builder reusable setting for request
 			// Request and response filter for logging
+			/*
+			 * ReqAddPlace = new RequestSpecBuilder().setBaseUri(getGLobalValues("baseUrl"))
+			 * .addQueryParam("key",
+			 * "qaclick123").addFilter(RequestLoggingFilter.logRequestTo(logStream))
+			 * .addFilter(ResponseLoggingFilter.logResponseTo(logStream)).setContentType(
+			 * ContentType.JSON).build();
+			 */
 			ReqAddPlace = new RequestSpecBuilder().setBaseUri(getGLobalValues("baseUrl"))
-					.addQueryParam("key", "qaclick123").addFilter(RequestLoggingFilter.logRequestTo(logStream))
+					.addFilter(RequestLoggingFilter.logRequestTo(logStream))
 					.addFilter(ResponseLoggingFilter.logResponseTo(logStream)).setContentType(ContentType.JSON).build();
 			return ReqAddPlace;
 		}

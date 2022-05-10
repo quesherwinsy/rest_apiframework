@@ -7,7 +7,8 @@ package resources;
 public enum ApiResources {
 
 	AddPlaceAPI("/maps/api/place/add/json"), GetPlaceAPI("/maps/api/place/get/json"),
-	DeletePlaceAPI("/maps/api/place/delete/json");
+	DeletePlaceAPI("/maps/api/place/delete/json"), AddClientAPI("/scc/oauth/client/"), GetClientAPI("/scc/oauth/client/"),
+	DeleteClientAPI("/scc/oauth/client/"), PutClientAPI("/scc/oauth/client/");
 
 	private String resources;
 

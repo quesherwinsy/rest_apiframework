@@ -8,7 +8,7 @@ public class Hooks {
 	// @Before(@Tagname) - will run before specific step definition tag
 	// @Before - will run before at all step definition test tag
 
-	@Before("@DeletePlaceAPI")
+	// @Before("@DeletePlaceAPI")
 	public void beforeScenario() throws Throwable {
 		// code that will give place_id, run when place_id is null
 		StepDefinition sd_temp = new StepDefinition();
@@ -16,11 +16,11 @@ public class Hooks {
 		if (StepDefinition.place_id_exp == null) {
 			sd_temp.add_place_payload_with("Shetty", "French", "Asia");
 			sd_temp.user_calls_something_with_post_http_request("AddPlaceAPI", "Post");
-			sd_temp.verify_place_id_created_maps_to_using("place_id", "Shetty", "GetPlaceAPI");
+			sd_temp.verify_place_id_created_maps_to_using("place_id", "Shetty", "GetPlaceAPI", "username", "password");
 		}
 	}
 
-	@After
+	// @After
 	public void afterScenario() {
 		// System.out.println("run after the Scenario");
 	}
